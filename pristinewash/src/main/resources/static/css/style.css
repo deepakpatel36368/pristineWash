@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Poppins', sans-serif;
+}
+#list{
+	
+	position: absolute;
+	right: 0;
+	
+}
+
+.welcomeToPristineWashText{
+    margin-top: 100px;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+}
+
+.banner {
+    padding-top: 100px;
+    height :900px;    
+    background-image: url("/img/wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover
+    /* background: linear-gradient(90deg, rgba(38,237,156,1) 0%, rgba(38,237,156,1) 44%, rgba(11,172,239,1) 100%); */
+}
+
+.bannerImg {
+    padding: 100px;
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+
+#scheduleButton{
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 100px;
+}
+
+#callUs{
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 95px;
+    padding-right: 95px;
+    border-radius: 100px;
+}
+
+.bi-telephone-inbound-fill{
+    padding-left: 20px;
+}
+
+.ourServicesText{
+    margin-top: 30px;
+    font-size: xx-large;
+
+}
+
+.serviceStart{
+    margin-top: 20px;
+}
+
+.card{
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border: 0;
+  border-radius: 10px;
+}
+.hover-effect:hover {
+    background: #8ee28e;
+    transition: background-color 0.5s;
+}
+
+.hover-effect:hover h5 {
+    color: white;
+    transition: background-color 0.2s;
+}
+.card h5 {
+    margin-bottom: 20px;
+    color: #03C887;
+}
+
+.serviceImage{
+    height: 100px;
+    width: 100px;
+}
+
+.testimonialHeading{
+    margin-top: 70px;
+    font-size: xx-large;
+}
+
+.testimonialCard{
+	margin-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 50px;
+	background: rgb(255,207,49);
+    background: linear-gradient(90deg, rgba(255,207,49,1) 0%, rgba(255,141,71,1) 100%);
+	border-radius: 20px;
+}
+
+.testimonialCard img{
+	border-radius: 500px;
+	height: 80px;
+	border: 7px solid white;
+	margin: 20px;
+}
+
+.testimonialName{
+	font-weight: 900;
+    color: white;
+}
+
+.testimonialText{
+	text-align: justify;
+	font-size: small;
+	color: white;
+}
+
+.footer{
+    margin-top: 100px;
+}
+
+
+@media only screen and (max-width:600px) {
+
+    .card{
+        margin-bottom: 20px;
+        border: 0;
+      }
+
+      .welcomeToPristineWashText{
+        margin-top: 80px;
+        font-weight: 400;
+        font-size: 20px;
+        color: white;
+    }
+
+    .banner {
+        padding-top: 100px;
+        height :fit-content;
+        padding-bottom: 80px;
+    }
+    .bannerImg {
+        margin-bottom: 20px;
+        padding: 0px;
+    }
+
+    .serviceImage{
+        height: 70px;
+        width: 70px;
+    }
+ 
+   .oneClickWash{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 30px;
+}
+}

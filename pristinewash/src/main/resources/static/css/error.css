@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+	font-family: 'Poppins', sans-serif;
+}
+
+
+.errorimage{
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height : 400px;
+    background-position: center;
+}
+/*======================
+    404 page
+=======================*/
+
+
+.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif); */
+    background-image: url(/img/miguelgarest.gif);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+
+ .four_zero_four_bg h1{
+    font-family: 'Poppins', sans-serif;
+    font-size:80px;
+ }
+
+  .four_zero_four_bg h3{
+    font-family: 'Poppins', sans-serif;
+	font-size:80px;
+    }
+
+.link_404{
+    font-family: 'Poppins', sans-serif;
+	color: white;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.contant_box_404{ margin-top:-50px;}
+
+
+@media only screen and (max-width:600px) {
+
+    .four_zero_four_bg{
+        background-size: contain;
+     }
+}
