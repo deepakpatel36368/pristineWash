@@ -1,5 +1,6 @@
 package com.website.pristinewash.entity;
 
+import com.website.pristinewash.utility.ScheduleState;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,4 +25,7 @@ public class ScheduleCall {
     private LocalDate date;
     private LocalTime time;
     private String message;
+
+    @Enumerated(EnumType.STRING)
+    private ScheduleState state;
 }

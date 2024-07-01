@@ -49,8 +49,10 @@ public class OTPController {
 
     public ResponseEntity<String> sendWhatsAppWithTwilio(final String phoneNumber, final String smsMessage) {
         try {
+            if(false){
+                return new ResponseEntity<>("Uncomment this code for testing", HttpStatus.OK);
+            }
             //Move below properties to the application properties file
-
             final String TWILIO_ACCOUNT_SID = "";
             final String TWILIO_AUTH_TOKEN = "";
             final String senderPhoneNumber = "+91" + phoneNumber;
@@ -68,8 +70,7 @@ public class OTPController {
             }
             //Remove below catch block after twilio upgrade
         } catch (Exception e) {
-            log.info(phoneNumber + " will get registered in to the database with otp. Otp not send due to twilio not upgrade.");
-            return new ResponseEntity<>("new number need to upgrade twilio account", HttpStatus.OK);
+            return new ResponseEntity<>("Invalid Phone Number", HttpStatus.BAD_REQUEST);
         }
     }
 

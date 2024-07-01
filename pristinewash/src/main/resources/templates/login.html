@@ -14,11 +14,11 @@
   <div class="row">
     <div class="col">
       <!-- Navbar 1 - Bootstrap Brain Component -->
-      <nav class="navbar fixed-top navbar-expand-md bsb-navbar bsb-navbar-hover bsb-navbar-caret topNavBar"
-           style="background-color: rgba(255, 255, 255, 0.90);
+      <nav class="navbar fixed-top navbar-expand-md bsb-navbar bsb-navbar-hover bsb-navbar-caret topNavBar" 
+      style="background-color: rgba(255, 255, 255, 0.90);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" th:href="@{/index.html}" href="index.html">
             <img th:src="@{/img/Logo.svg}" alt="Pristine Wash" width="135" height="44">
           </a>
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -50,10 +50,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#!" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                   <ul class="dropdown-menu border-0 shadow bsb-zoomIn" aria-labelledby="servicesDropdown">
-                    <li><a class="dropdown-item" th:href="@{#!}" href="#!">Wash & Fold</a></li>
-                    <li><a class="dropdown-item" th:href="@{#!}" href="#!">Dry Clean</a></li>
-                    <li><a class="dropdown-item" th:href="@{#!}" href="#!">Steam & Iron</a></li>
-                    <li><a class="dropdown-item" th:href="@{#!}" href="#!">Stain Removal</a></li>
+                    <li><a class="dropdown-item" th:href="@{/wash-and-fold}" href="#!">Wash & Fold</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dry-cleaning}" href="#!">Dry Clean</a></li>
+                    <li><a class="dropdown-item" th:href="@{/steam-and-iron}" href="#!">Steam & Iron</a></li>
+                    <li><a class="dropdown-item" th:href="@{/product_by_category/4}" href="#!">Stain Removal</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
@@ -91,7 +91,7 @@
                   <!-- Phone Number -->
                   <div class="form-outline mb-4">
                     <label class="form-label" for="username">Phone Number</label>
-                    <input type="tel" id="username" name="username" class="form-control"/>
+                    <input type="tel" id="username" name="username" class="form-control" required/>
                   </div>
 
                   <!-- OTP input -->
@@ -100,20 +100,20 @@
                     <input type="password" id="password" name ="password" class="form-control"/>
                   </div>
 
-                  <!-- Sent otp -->
-                  <button type="submit" class="btn bg-success btn-block mb-4" id="sendOTPBtn"
-                          style="color: white;">Send OTP
-                  </button>
-
                   <button type="submit" class="btn bg-success btn-block mb-4"
                           style="margin-left: 25px; color: white;">Login
                   </button>
+
+                  <!-- Sent otp -->
+                  <button type="submit" class="btn bg-dark btn-block mb-4" id="sendOTPBtn"
+                     style="color: white;">Send OTP
+                   </button>
 
                 </form>
 
                 <!-- Error message -->
                 <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
-                  <span th:text="${errorMessage}"></span>
+                  <span th:text="${errorMessage}">.</span>
                 </div>
 
               </div>

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Thymleaf Controller class will directly interact with the front end.
@@ -87,7 +88,7 @@ public class ThymleafController implements ErrorController {
      * User by Login page to send otp
      */
     @GetMapping("/sendotp")
-    public String generateOTP(@RequestParam String username) {
+    public String generateOTP(@RequestParam String username, Model model) {
         ResponseEntity<String> response = otpController.generateOTP(username);
         if(response.getStatusCode() == HttpStatus.OK) {
             return "login";
@@ -110,8 +111,8 @@ public class ThymleafController implements ErrorController {
         ResponseEntity<String> response = scheduleCallController.ScheduleCallToUser(scheduleCallDTO);
         final String smsMessage = response.getBody();
         //session.getAttribute("SPRING_SECURITY_CONTEXT")
-        String username = (String) session.getAttribute("username");
-        log.info(username);
+//        String username = (String) session.getAttribute("username");
+//        log.info(username);
         log.info(scheduleCallDTO.getUsername() + " " + scheduleCallDTO.getDate()
                 + " " + scheduleCallDTO.getTime() + " " + scheduleCallDTO.getMessage());
 
@@ -146,21 +147,66 @@ public class ThymleafController implements ErrorController {
 //        }
 //    }
 
-    @GetMapping("product_by_category/{categoryId}")
-    public String product_test(@PathVariable Integer categoryId, Model model ){
-        model.addAttribute("categoryId", categoryId);
-        //return "product2";
-        return "product-final2";
+//    @GetMapping("product_by_category/{categoryId}")
+//    public String productByCategory(@PathVariable Integer categoryId){
+//        if(categoryId == 1) return "productDescWashAndFold";
+//        if(categoryId == 2) return "productDescDryClean";
+//        if(categoryId == 3) return "productDescSteamAndIron";
+//        if(categoryId == 4) return "productDescStainRemoval";
+//        return "productDescWashAndFold";
+//    }
+
+    @GetMapping("/wash-and-fold")
+    public String washAndFold() {
+        return "productDescWashAndFold";
     }
+
+    @GetMapping("/dry-cleaning")
+    public String dryCleaning() {
+        return "productDescDryClean";
+    }
+
+    @GetMapping("/steam-and-iron")
+    public String steamAndIron() {
+        return "productDescSteamAndIron";
+    }
+
+    @GetMapping("/stain-removal")
+    public String stainRemoval() {
+        return "productDescStainRemoval";
+    }
+
+//    @GetMapping("product_by_category/{categoryId}")
+//    public String product_test(@PathVariable Integer categoryId, Model model ){
+//        model.addAttribute("categoryId", categoryId);
+//        //return "product2";
+//        return "product-final2";
+//    }
 
     /**
      * Show the user cart
      */
-    @GetMapping("/cart")
-    public String user_cart() {
-        return "cart";
+//    @GetMapping("/cart")
+//    public String user_cart() {
+//        return "cart";
+//    }
+
+
+    /**
+     * Admin Controller - Schedule call data
+     */
+    @GetMapping("/admin/all_schedule")
+    public String adminAllScheduleCallData() {
+        return "admin_all_Schedule_call_data";
     }
 
+    @GetMapping("/sitemap.xml")
+    public String siteMapXml() {
+        return "sitemap.xml";
+    }
 
-
+    @GetMapping("/all_schedule")
+    public ResponseEntity<List<ScheduleCallDTO>> findAllScheduleData() {
+        return scheduleCallController.findAllScheduleCall();
+    }
 }

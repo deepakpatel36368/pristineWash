@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Call Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Schedule Call Data</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Zip Code</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Message</th>
+        </tr>
+        </thead>
+        <tbody id="scheduleData">
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: '/all_schedule',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var scheduleData = '';
+                $.each(data, function(index, schedule) {
+                    scheduleData += '<tr>';
+                    scheduleData += '<td>' + schedule.id + '</td>';
+                    scheduleData += '<td>' + schedule.addressDTO.name + '</td>';
+                    scheduleData += '<td>' + schedule.userDTO.username + '</td>';
+                    scheduleData += '<td>' + schedule.addressDTO.street + '</td>';
+                    scheduleData += '<td>' + schedule.addressDTO.city + '</td>';
+                    scheduleData += '<td>' + schedule.addressDTO.zipCode + '</td>';
+                    scheduleData += '<td>' + schedule.date + '</td>';
+                    scheduleData += '<td>' + schedule.time + '</td>';
+                    scheduleData += '<td>' + schedule.message + '</td>';
+                    scheduleData += '</tr>';
+                });
+                $('#scheduleData').html(scheduleData);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+</script>
+</body>
+</html>

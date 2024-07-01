@@ -38,11 +38,20 @@ body{
 }
 
 #scheduleButton{
+    color: #121D3A; /* Text color */
+    border-color: #121D3A !important; /* Outline color */
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
     border-radius: 100px;
 }
+
+#scheduleButton:hover {
+    font-weight: 500;
+    background-color: #121D3A; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
 
 #callUs{
     margin-top: 20px;
@@ -51,6 +60,19 @@ body{
     padding-right: 95px;
     border-radius: 100px;
 }
+
+.offerCol{
+    /* background-color: #16C0EA; */
+    background-color: #121D3A;
+}
+
+.offerCol p {
+    color: white;
+    font-size: medium;
+    font-weight: 400;
+}
+
+  
 
 .bi-telephone-inbound-fill{
     padding-left: 20px;
@@ -62,18 +84,28 @@ body{
 
 }
 
+.ourServiceOptions {
+    text-decoration: none !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size :medium;
+
+}
+
+
 .serviceStart{
     margin-top: 20px;
 }
 
 .card{
+    border: 0;
   padding-bottom: 25px;
   padding-top: 25px;
-  border: 0;
   border-radius: 10px;
 }
 .hover-effect:hover {
-    background: #8ee28e;
+    background: #121D3A;
+    /* background: linear-gradient(171deg, rgba(60,231,220,1) 0%, rgba(129,145,254,1) 100%); */
     transition: background-color 0.5s;
 }
 
@@ -83,12 +115,25 @@ body{
 }
 .card h5 {
     margin-bottom: 20px;
-    color: #03C887;
+    color: black;
 }
 
 .serviceImage{
     height: 100px;
     width: 100px;
+}
+
+.line-through {
+    position: relative;
+  }
+  
+.line-through:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 2px solid red; /* Adjust border properties as needed */
 }
 
 .testimonialHeading{
@@ -101,8 +146,9 @@ body{
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-bottom: 50px;
-	background: rgb(255,207,49);
-    background: linear-gradient(90deg, rgba(255,207,49,1) 0%, rgba(255,141,71,1) 100%);
+    background-color: #8499F3;
+	/* background: rgb(255,207,49);
+    background: linear-gradient(90deg, rgba(255,207,49,1) 0%, rgba(255,141,71,1) 100%); */
 	border-radius: 20px;
 }
 
@@ -163,4 +209,21 @@ body{
     padding-right: 50px;
     margin-top: 30px;
 }
+}
+
+.float{
+	position: fixed;
+	right: 40px;
+	bottom: 20px;
+}
+
+.whatsappIcon{
+	color: #4FCE5D;
+	font-size: xx-large;
+
+}
+.float p{
+	font-size: x-small;
+	color: #4cb5fd;
+	font-weight: 700;
 }

@@ -15,5 +15,7 @@ public class ProductDTO {
 
     private double price;
 
+    private String url;
+
     private CategoryDTO categoryDto;
 }
